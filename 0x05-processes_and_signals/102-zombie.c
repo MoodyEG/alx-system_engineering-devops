@@ -5,7 +5,7 @@
 
 /**
  * infinite_while - infinite loop
- * 
+ *
  * Return: Always 0
  */
 int infinite_while(void)
