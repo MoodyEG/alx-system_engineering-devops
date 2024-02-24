@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script manages manage_my_process
+runmanage()
+{
+	./manage_my_process & echo "$!" > /var/run/my_process.pi
+}
+stopmanage()
+{
+	sudo pkill -f  "./manage_my_process"
+	rm /var/run/my_process.pid
+}
+case $1 in
+	start)
+	runmanage
+	echo "manage_my_process started";;
+	stop)
+	stopmanage
+	echo "manage_my_process stopped";;
+	restart)
+	stopmanage
+	runmanage
+	echo "manage_my_process restarted";;
+	*)
+	echo "Usage: manage_my_process {start|stop|restart}"
+esac
