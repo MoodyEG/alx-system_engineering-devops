@@ -2,7 +2,7 @@
 # This script manages manage_my_process
 runmanage()
 {
-	./manage_my_process & echo "$!" > /var/run/my_process.pi
+	./manage_my_process & echo "$!" > /var/run/my_process.pid
 }
 stopmanage()
 {
