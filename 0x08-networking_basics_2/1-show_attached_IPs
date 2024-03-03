@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Bash script that displays all active IPv4 IPs on the machine it’s executed on.
+sudo apt install net-tools
 sudo ifconfig | grep "inet" | cut -d "i" -f2 | cut -d " " -f2 | grep -oE "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"
